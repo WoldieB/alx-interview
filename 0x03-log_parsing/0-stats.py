@@ -40,4 +40,11 @@ if __name__ == "__main__":
                 # File size
                 log["file_size"] += file_size
 
-                                                                                                                                                             1,12          Top
+                # status code
+                if (code.isdecimal()):
+                    log["code_frequency"][code] += 1
+
+                if (line_count % 10 == 0):
+                    output(log)
+    finally:
+        output(log)
